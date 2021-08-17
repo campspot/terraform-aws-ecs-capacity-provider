@@ -6,17 +6,11 @@ variable "launch_template" {
   description = "Identifier of Launch Template used for auto-scaling"
 }
 
-variable "vpc_default" {
-  description = "Indicate whether to deploy in the default VPC"
-  default     = true
+variable "subnet_ids" {
+  type        = set(string)
+  description = "Indicate which subnet_ids to deploy to"
+  default     = []
 }
-
-variable "vpc_tags" {
-  type        = map(any)
-  description = "A map of tags to match on the VPC lookup"
-  default     = {}
-}
-
 variable "tags" {
   type        = map(any)
   description = "A map of tags to attach to all capacity provider resources"
