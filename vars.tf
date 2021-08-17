@@ -17,6 +17,12 @@ variable "vpc_tags" {
   default     = {}
 }
 
+variable "tags" {
+  type        = map(any)
+  description = "A map of tags to attach to all capacity provider resources"
+  default     = {}
+}
+
 variable "asg_max_size" {
   description = "Maximum allowed nodes in the cluster"
   type        = number

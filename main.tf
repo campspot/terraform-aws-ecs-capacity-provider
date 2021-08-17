@@ -15,6 +15,8 @@ data "aws_subnet_ids" "tenant" {
 
 resource "aws_ecs_capacity_provider" "capacity_provider" {
   name = var.name
+  tags = var.tags
+  tags_all = var.tags
   auto_scaling_group_provider {
     auto_scaling_group_arn = aws_autoscaling_group.capacity_provider.arn
     managed_scaling {
